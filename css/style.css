@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e5ecf4;
+    font-family: 'Poppins', sans-serif ;
+}
+
+.title-total{
+    width: 100%;
+    background-color:#fff;
+    box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+-webkit-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+-moz-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title-total h2{
+    margin-top: 10px;
+    color: #333;
+    font-weight:700;
+    font-size: 18px;
+    
+}
+
+span.color-title{
+    color:#3578c7;
+    font-size: 22px;
+    font-weight:800;
+    margin-top: 5px;
+}
+
+.container-title-finances{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 14px;
+    margin-bottom: 15px;
+}
+
+.renda,
+.despesas{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Rdepesas{
+    color:#e94847;
+    font-size: 20px;
+    font-weight:600;
+    margin-top: 10px;
+}
+.Rrendas{
+    color: #4dae54;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.title-despesa,
+.title-renda{
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+.container-title-finances > div:first-of-type {
+    border-right: 1px solid #999;
+}
+
+.sua_atividade{
+    display: flex;
+    justify-content: space-around;
+    margin-top:25px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.container-li{
+    max-height: 200px;
+    overflow: auto;
+    margin-top: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.title-transacao{
+    margin-top: 55px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.title-input-1,
+.title-input-2{
+    color: #000;
+}
+
+.container-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-inputs input{
+    box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    -webkit-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    -moz-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    width: 90%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+.container-button input{
+    box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+-webkit-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+-moz-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    border-radius: 10px;
+    border: none;
+    width: 90%;
+    height: 40px;
+}
+
+.container-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+
+
+label{
+    font-weight: 700;
+    color: #333;
+    margin-bottom:10px;
+    margin-top: 10px;
+    text-align: start;
+}
+
+.content-li{
+    background-color: #fff;
+    width: 90%;
+    border-radius: 10px;
+    align-content: center;
+    display: Flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 29px;
+}
+
+.container-li li{
+    margin-top:10px;
+    display: flex;
+    justify-content: center;
+}
+
+.contente-li-title-name,
+.contente-li-title-valor,
+.title-sua-atividade,
+.title-valores
+{
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    width: 50%;
+}
+
+.decorated-button{
+    font-size: 15px;
+    font-weight: 800;
+    color: #111;
+    background:linear-gradient(to right, #76b852 0%, #8DC26F 51%, #76b852 100%);
+}
+
+.container-title-finances img{
+    width: 19px;
+    height: 19px;
+}
+
+.title-trans{
+    color: #4dae54;
+}
+
+.title-trans-red{
+    color: #e94847;
+}
+
+
+
+

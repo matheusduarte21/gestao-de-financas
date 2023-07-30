@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de finanças</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="title-total">
+            <h2>Saldo Atual</h2>
+            <span class="color-title">R$ -----</span>
+            <div class="container-title-finances">
+                <div class="despesas">
+                    <span class="title-despesa">Saidas <img src="./images/seta-para-baixo (2).png"></span>
+                    <span class="Rdepesas"> - R$ --- </span>
+                </div>
+                <div class="renda">
+                    <span class="title-renda">Entradas <img src="./images/seta-para-baixo (1).png"></span>
+                    <span class="Rrendas"> + R$ ---</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sua_atividade">
+            <div class="title-sua-atividade">Sua Atividade</div>
+            <div class="title-valores">Valores</div>
+        </div>
+
+        <div class="container-li">
+            <ul id="minhaLista">
+            </ul>
+        </div>
+        <div class="adicionar-transacao">
+            <div class="title-transacao">Adicionar transação</div>
+        </div>
+
+        
+        <div class="container-inputs">
+            <label for="Name">Nome</label>
+            <input type="text" id="input-name" placeholder="Nome da Transação">
+        </div>
+
+        
+        <div class="container-inputs">
+            <label for="Name">Valor</label>
+            <input type="number" name="" id="input-valor" placeholder="Valor da Transação">
+        </div>
+
+        <div class="container-button">
+            <input type="submit" id="btn-add" class="decorated-button" value="ADICIONAR" onclick="veri()">
+        </div>
+        
+    </header>
+    <script src="./js/app.js"></script>
+</body>
+</html>
