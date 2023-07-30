@@ -9,6 +9,15 @@
 body{
     background-color: #e5ecf4;
     font-family: 'Poppins', sans-serif ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    margin: auto;
+    width: 420px;
 }
 
 .title-total{
