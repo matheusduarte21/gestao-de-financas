@@ -40,12 +40,12 @@ let Soma2: number = 0;
 function Entradas(){
   const inputValor: HTMLInputElement = document.getElementById('input-valor') as HTMLInputElement;
   const ValueInputValor: string = inputValor.value.trim();
-  const Rdespesas= document.querySelector('.Rdepesas')  as HTMLSpanElement 
+  const Rrendas= document.querySelector('.Rrendas')  as HTMLSpanElement 
     if(ValueInputValor > '0'){
         const valorNumerico: number = parseFloat(ValueInputValor);
         if (valorNumerico > 0 ) {
-          Soma2 += valorNumerico;
-          return Rdespesas.textContent =`+R$ ${Soma2}`
+          Soma += valorNumerico;
+          return Rrendas.textContent =`+R$ ${Soma}`
         }
   }
 }

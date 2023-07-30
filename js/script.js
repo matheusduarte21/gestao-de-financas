@@ -32,12 +32,12 @@ var Soma2 = 0;
 function Entradas() {
     var inputValor = document.getElementById('input-valor');
     var ValueInputValor = inputValor.value.trim();
-    var Rdespesas = document.querySelector('.Rdepesas');
+    var Rrendas = document.querySelector('.Rrendas');
     if (ValueInputValor > '0') {
         var valorNumerico = parseFloat(ValueInputValor);
         if (valorNumerico > 0) {
-            Soma2 += valorNumerico;
-            return Rdespesas.textContent = "+R$ ".concat(Soma2);
+            Soma += valorNumerico;
+            return Rrendas.textContent = "+R$ ".concat(Soma);
         }
     }
 }
