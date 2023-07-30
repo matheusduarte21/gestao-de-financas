@@ -89,5 +89,12 @@ function Veri(){
   }else{
      Teste();
      Transacao();
+
+     const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement
+      inputName.value = ''
+
+      const inputValor:HTMLInputElement  = document.getElementById('input-valor')  as HTMLInputElement
+      inputValor.value = ''
+   
   }
 }

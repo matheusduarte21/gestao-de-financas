@@ -77,5 +77,9 @@ function Veri() {
     else {
         Teste();
         Transacao();
+        var inputName_1 = document.getElementById('input-name');
+        inputName_1.value = '';
+        var inputValor_1 = document.getElementById('input-valor');
+        inputValor_1.value = '';
     }
 }
