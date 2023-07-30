@@ -1,72 +1,93 @@
-function teste(): void {
-   const inputName: string = document.getElementById('input-name').value;
-   const inputValor: number = parseFloat(document.getElementById('input-valor').value);
-   const minhalista: HTMLUListElement = document.getElementById('minhaLista') as HTMLUListElement;
-   const li: HTMLLIElement = document.createElement('li');
-   minhalista.appendChild(li);
- 
-   const Li_div: HTMLDivElement = document.createElement('div');
-   Li_div.classList.add('content-li');
-   li.appendChild(Li_div);
- 
-   const div_content_li_title: HTMLDivElement = document.createElement('div');
-   div_content_li_title.classList.add('contente-li-title-name');
-   div_content_li_title.textContent = inputName;
-   Li_div.appendChild(div_content_li_title);
- 
-   const div_contente_li_title_valor: HTMLDivElement = document.createElement('div');
-   div_contente_li_title_valor.classList.add('contente-li-title-valor');
-   const span: HTMLSpanElement = document.createElement('span');
-   span.textContent = `R$ ${inputValor}`;
-   if (inputValor > 0) {
-     span.classList.add('title-trans');
-   } else {
-     span.classList.add('title-trans-red');
-   }
-   div_contente_li_title_valor.appendChild(span);
-   Li_div.appendChild(div_contente_li_title_valor);
- 
-   transacao();
- }
- 
- let soma: number = 0;
- let soma2: number = 0;
- 
- function entradas(): void {
-   const inputValor: number = parseFloat(document.getElementById('input-valor').value.trim());
-   const Rrendas: HTMLSpanElement = document.querySelector('.Rrendas') as HTMLSpanElement;
-   if (inputValor > 0) {
-     const valorNumerico: number = parseFloat(inputValor.toString());
-     if (valorNumerico > 0) {
-       soma += valorNumerico;
-       document.getElementById('input-valor').value = '';
-       document.getElementById('input-name').value = '';
-       Rrendas.textContent = `+R$ ${soma}`;
-     }
-   }
- }
- 
- function saidas(): void {
-   const inputValor: number = parseFloat(document.getElementById('input-valor').value.trim());
-   const Rdespesas: HTMLSpanElement = document.querySelector('.Rdepesas') as HTMLSpanElement;
-   if (inputValor < 0) {
-     const valorNumerico: number = parseFloat(inputValor.toString());
-     if (inputValor < 0) {
-       soma2 += valorNumerico;
-       Rdespesas.textContent = `+R$ ${soma2}`;
-     }
-   }
- }
- 
- function transacao(): void {
-   entradas();
-   saidas();
-   total();
- }
- 
- function total(): void {
-   const total: HTMLSpanElement = document.querySelector('.color-title') as HTMLSpanElement;
-   const valorTotal: number = soma + soma2;
-   total.textContent = `R$ ${valorTotal}`;
- }
- 
+
+function Teste(){
+  const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement;
+  const valorInputName: string = inputName.value;
+  
+  const inputValor: HTMLInputElement = document.getElementById('input-valor')as HTMLInputElement;
+  const valorInputValor: string = inputValor.value
+  const valor: number = parseFloat(valorInputValor);
+
+  const minhalista: HTMLUListElement = document.getElementById('minhaLista') as HTMLUListElement
+  const li = document.createElement('li');
+  minhalista.appendChild(li)
+
+  const Li_div = document.createElement('div')
+  Li_div.classList.add('content-li')
+  li.appendChild(Li_div)
+
+  const div_content_li_title = document.createElement('div')
+  div_content_li_title.classList.add('contente-li-title-name')
+  div_content_li_title.textContent = valorInputName
+  Li_div.appendChild(div_content_li_title)
+
+  const div_contente_li_title_valor = document.createElement('div')
+  div_contente_li_title_valor.classList.add('contente-li-title-valor')
+  const span = document.createElement('span')
+  span.textContent = `R$ ${valorInputValor}`
+  if(valor > 0 ){
+     span.classList.add('title-trans')
+  }else{
+     span.classList.add('title-trans-red')
+  }
+  div_contente_li_title_valor.appendChild(span)
+  Li_div.appendChild(div_contente_li_title_valor)
+}
+
+
+let Soma: number = 0;
+let Soma2: number = 0;
+
+function Entradas(){
+  const inputValor: HTMLInputElement = document.getElementById('input-valor') as HTMLInputElement;
+  const ValueInputValor: string = inputValor.value.trim();
+  const Rdespesas= document.querySelector('.Rdepesas')  as HTMLSpanElement 
+    if(ValueInputValor > '0'){
+        const valorNumerico: number = parseFloat(ValueInputValor);
+        if (valorNumerico > 0 ) {
+          Soma2 += valorNumerico;
+          return Rdespesas.textContent =`+R$ ${Soma2}`
+        }
+  }
+}
+
+function Saidas(){
+ const inputValor: HTMLInputElement = document.getElementById('input-valor') as HTMLInputElement;
+ const ValueInputValor: string = inputValor.value.trim();
+ const Rdespesas= document.querySelector('.Rdepesas')  as HTMLSpanElement;
+    if(ValueInputValor < '0'){
+      const valorNumerico: number = parseFloat(ValueInputValor);
+      if (valorNumerico < 0 ) {
+          Soma2 += valorNumerico;
+        return Rdespesas.textContent =`+R$ ${Soma2}`
+      }
+  }
+}
+
+function Total(){
+  const Total: HTMLSpanElement = document.querySelector('.color-title') as HTMLSpanElement;
+  const ValorTotal:number = Soma + Soma2;
+  return Total.textContent = `R$ ${ValorTotal}`
+}
+
+function Transacao():void{
+  Entradas()
+  Saidas()
+  Total()
+}
+
+function Veri(){
+  const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement
+  const ValueInputName: string = inputName.value;
+
+  const inputValor:HTMLInputElement  = document.getElementById('input-valor')  as HTMLInputElement
+  const ValueInputValor: string = inputValor.value;
+
+  if(ValueInputName === ''){
+   alert('preencha todos os campos')
+  }else if( ValueInputValor === ''){
+     alert("Preencha o campo")
+  }else{
+     Teste();
+     Transacao();
+  }
+}
