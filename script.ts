@@ -1,100 +1,101 @@
-
-function Teste(){
-  const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement;
-  const valorInputName: string = inputName.value;
-  
-  const inputValor: HTMLInputElement = document.getElementById('input-valor')as HTMLInputElement;
-  const valorInputValor: string = inputValor.value
-  const valor: number = parseFloat(valorInputValor);
-
-  const minhalista: HTMLUListElement = document.getElementById('minhaLista') as HTMLUListElement
-  const li = document.createElement('li');
-  minhalista.appendChild(li)
-
-  const Li_div = document.createElement('div')
-  Li_div.classList.add('content-li')
-  li.appendChild(Li_div)
-
-  const div_content_li_title = document.createElement('div')
-  div_content_li_title.classList.add('contente-li-title-name')
-  div_content_li_title.textContent = valorInputName
-  Li_div.appendChild(div_content_li_title)
-
-  const div_contente_li_title_valor = document.createElement('div')
-  div_contente_li_title_valor.classList.add('contente-li-title-valor')
-  const span = document.createElement('span')
-  span.textContent = `R$ ${valorInputValor}`
-  if(valor > 0 ){
-     span.classList.add('title-trans')
-  }else{
-     span.classList.add('title-trans-red')
-  }
-  div_contente_li_title_valor.appendChild(span)
-  Li_div.appendChild(div_contente_li_title_valor)
+function FormatarNumero(numero: number, casasDecimais: number) {
+  return numero.toLocaleString(undefined, {
+    minimumFractionDigits: casasDecimais,
+    maximumFractionDigits: casasDecimais,
+    style: 'currency',
+    currency: 'BRL'
+  });
 }
 
+function Teste() {
+  var inputName = document.getElementById('input-name');
+  var valorInputName = inputName.value;
+  var inputValor = document.getElementById('input-valor');
+  var valorInputValor = inputValor.value;
+  var valor = parseFloat(valorInputValor);
+  var Minhalista = document.getElementById('minhaLista');
+  var li = document.createElement('li');
+  Minhalista.appendChild(li);
+  var Li_div = document.createElement('div');
+  Li_div.classList.add('content-li');
+  li.appendChild(Li_div);
+  var div_content_li_title = document.createElement('div');
+  div_content_li_title.classList.add('contente-li-title-name');
+  div_content_li_title.textContent = valorInputName;
+  Li_div.appendChild(div_content_li_title);
+  var div_contente_li_title_valor = document.createElement('div');
+  div_contente_li_title_valor.classList.add('contente-li-title-valor');
+  var span = document.createElement('span');
+  var format = formatarNumero(parseFloat(valorInputValor), 2)
+  span.textContent = format
+  if (valor > 0) {
+      span.classList.add('title-trans');
+  }
+  else {
+      span.classList.add('title-trans-red');
+  }
+  div_contente_li_title_valor.appendChild(span);
+  Li_div.appendChild(div_contente_li_title_valor);
+}
 
-let Soma: number = 0;
-let Soma2: number = 0;
-
-function Entradas(){
-  const inputValor: HTMLInputElement = document.getElementById('input-valor') as HTMLInputElement;
-  const ValueInputValor: string = inputValor.value.trim();
-  const Rrendas= document.querySelector('.Rrendas')  as HTMLSpanElement 
-    if(ValueInputValor > '0'){
-        const valorNumerico: number = parseFloat(ValueInputValor);
-        if (valorNumerico > 0 ) {
+var Soma2 = 0;
+var Soma = 0;
+function Entradas() {
+  var inputValor = document.getElementById('input-valor');
+  var ValueInputValor = inputValor.value.trim();
+  var Rrendas = document.querySelector('.Rrendas');
+  if (ValueInputValor > '0') {
+      var valorNumerico = parseFloat(ValueInputValor);
+      if (valorNumerico > 0) {
           Soma += valorNumerico;
-          return Rrendas.textContent =`+R$ ${Soma}`
-        }
-  }
-}
-
-function Saidas(){
- const inputValor: HTMLInputElement = document.getElementById('input-valor') as HTMLInputElement;
- const ValueInputValor: string = inputValor.value.trim();
- const Rdespesas= document.querySelector('.Rdepesas')  as HTMLSpanElement;
-    if(ValueInputValor < '0'){
-      const valorNumerico: number = parseFloat(ValueInputValor);
-      if (valorNumerico < 0 ) {
-          Soma2 += valorNumerico;
-        return Rdespesas.textContent =`+R$ ${Soma2}`
+          const numeroFormatado = formatarNumero(Soma, 2);
+         return Rrendas.textContent = numeroFormatado
       }
   }
 }
 
-function Total(){
-  const Total: HTMLSpanElement = document.querySelector('.color-title') as HTMLSpanElement;
-  const ValorTotal:number = Soma + Soma2;
-  return Total.textContent = `R$ ${ValorTotal}`
+
+function Saidas() {
+  var inputValor = document.getElementById('input-valor');
+  var ValueInputValor = inputValor.value.trim();
+  var Rdespesas = document.querySelector('.Rdepesas');
+  if (ValueInputValor < '0'){
+      var valorNumerico = parseFloat(ValueInputValor);
+      if (valorNumerico < 0) {
+          Soma2 += valorNumerico;
+          const numeroFormatado = formatarNumero(Soma2, 2);
+          return Rdespesas.textContent = numeroFormatado
+      }
+  }
 }
-
-function Transacao():void{
-  Entradas()
-  Saidas()
-  Total()
+function Total() {
+  var Total = document.querySelector('.color-title');
+  var ValorTotal = Soma + Soma2;
+  var format = formatarNumero(ValorTotal, 2)
+ return Total.textContent = format
 }
-
-function Veri(){
-  const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement
-  const ValueInputName: string = inputName.value;
-
-  const inputValor:HTMLInputElement  = document.getElementById('input-valor')  as HTMLInputElement
-  const ValueInputValor: string = inputValor.value;
-
-  if(ValueInputName === ''){
-   alert('preencha todos os campos')
-  }else if( ValueInputValor === ''){
-     alert("Preencha o campo")
-  }else{
-     Teste();
-     Transacao();
-
-     const inputName: HTMLInputElement = document.getElementById('input-name') as HTMLInputElement
-      inputName.value = ''
-
-      const inputValor:HTMLInputElement  = document.getElementById('input-valor')  as HTMLInputElement
-      inputValor.value = ''
-   
+function Transacao() {
+  Entradas();
+  Saidas();
+  Total();
+}
+function Veri() {
+  var inputName = document.getElementById('input-name');
+  var ValueInputName = inputName.value;
+  var inputValor = document.getElementById('input-valor');
+  var ValueInputValor = inputValor.value;
+  if (ValueInputName === '') {
+      alert('preencha todos os campos');
+  }
+  else if (ValueInputValor === '') {
+      alert("Preencha o campo");
+  }
+  else {
+      Teste();
+      Transacao();
+      var inputName_1 = document.getElementById('input-name');
+      inputName_1.value = '';
+      var inputValor_1 = document.getElementById('input-valor');
+      inputValor_1.value = '';
   }
 }

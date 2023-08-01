@@ -24,8 +24,6 @@ header{
     width: 100%;
     background-color:#fff;
     box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
--webkit-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
--moz-box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
     border-radius: 0 0 25px 25px;
     display: flex;
     flex-direction: column;
@@ -66,13 +64,13 @@ span.color-title{
 
 .Rdepesas{
     color:#e94847;
-    font-size: 20px;
+    font-size: 17px;
     font-weight:600;
     margin-top: 10px;
 }
 .Rrendas{
     color: #4dae54;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -97,7 +95,9 @@ span.color-title{
 }
 
 .container-li{
-    max-height: 200px;
+    background-color: #fff;
+    box-shadow: -1px 3px 8px -3px rgba(110, 110, 110, 1);
+    height: 200px;
     overflow: auto;
     margin-top: 20px;
     margin: 10px;

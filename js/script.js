@@ -1,3 +1,12 @@
+function formatarNumero(numero, casasDecimais) {
+    return numero.toLocaleString(undefined, {
+      minimumFractionDigits: casasDecimais,
+      maximumFractionDigits: casasDecimais,
+      style: 'currency',
+      currency: 'BRL'
+    });
+  }
+
 function Teste() {
     var inputName = document.getElementById('input-name');
     var valorInputName = inputName.value;
@@ -17,7 +26,8 @@ function Teste() {
     var div_contente_li_title_valor = document.createElement('div');
     div_contente_li_title_valor.classList.add('contente-li-title-valor');
     var span = document.createElement('span');
-    span.textContent = "R$ ".concat(valorInputValor);
+    var format = formatarNumero(parseFloat(valorInputValor), 2)
+    span.textContent = format
     if (valor > 0) {
         span.classList.add('title-trans');
     }
@@ -27,8 +37,9 @@ function Teste() {
     div_contente_li_title_valor.appendChild(span);
     Li_div.appendChild(div_contente_li_title_valor);
 }
-var Soma = 0;
+
 var Soma2 = 0;
+var Soma = 0;
 function Entradas() {
     var inputValor = document.getElementById('input-valor');
     var ValueInputValor = inputValor.value.trim();
@@ -37,26 +48,31 @@ function Entradas() {
         var valorNumerico = parseFloat(ValueInputValor);
         if (valorNumerico > 0) {
             Soma += valorNumerico;
-            return Rrendas.textContent = "+R$ ".concat(Soma);
+            const numeroFormatado = formatarNumero(Soma, 2);
+           return Rrendas.textContent = numeroFormatado
         }
     }
 }
+
+
 function Saidas() {
     var inputValor = document.getElementById('input-valor');
     var ValueInputValor = inputValor.value.trim();
     var Rdespesas = document.querySelector('.Rdepesas');
-    if (ValueInputValor < '0') {
+    if (ValueInputValor < '0'){
         var valorNumerico = parseFloat(ValueInputValor);
         if (valorNumerico < 0) {
             Soma2 += valorNumerico;
-            return Rdespesas.textContent = "+R$ ".concat(Soma2);
+            const numeroFormatado = formatarNumero(Soma2, 2);
+            return Rdespesas.textContent = numeroFormatado
         }
     }
 }
 function Total() {
     var Total = document.querySelector('.color-title');
     var ValorTotal = Soma + Soma2;
-    return Total.textContent = "R$ ".concat(ValorTotal);
+    var format = formatarNumero(ValorTotal, 2)
+   return Total.textContent = format
 }
 function Transacao() {
     Entradas();
