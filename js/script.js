@@ -9,7 +9,7 @@ function formatarNumero(numero, casasDecimais) {
 
 function Teste() {
     var inputName = document.getElementById('input-name');
-    var valorInputName = inputName.value;
+    var valorInputUP = inputName.value.toUpperCase();
     var inputValor = document.getElementById('input-valor');
     var valorInputValor = inputValor.value;
     var valor = parseFloat(valorInputValor);
@@ -21,7 +21,7 @@ function Teste() {
     li.appendChild(Li_div);
     var div_content_li_title = document.createElement('div');
     div_content_li_title.classList.add('contente-li-title-name');
-    div_content_li_title.textContent = valorInputName;
+    div_content_li_title.textContent = valorInputUP;
     Li_div.appendChild(div_content_li_title);
     var div_contente_li_title_valor = document.createElement('div');
     div_contente_li_title_valor.classList.add('contente-li-title-valor');
